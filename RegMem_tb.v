@@ -18,7 +18,7 @@ module tb_reg_mem;
     initial begin
         // For use in EDAPlayground
         $dumpfile("dump.vcd");
-        $dumpvars(1, tb_reg_mem);
+      $dumpvars(1, tb_reg_mem);
         
         
         clk = 0;
