@@ -1,3 +1,5 @@
+// Code your testbench here
+// or browse Examples
 `timescale 1ns / 1ps
 
 module tb_reg_mem;
@@ -14,16 +16,16 @@ module tb_reg_mem;
     reg_mem #(DATA_WIDTH,ADDR_BITS) RM (addr, data_in, wen, clk, data_out);
 
     initial begin
-        /* For use in EDAPlayground
+        // For use in EDAPlayground
         $dumpfile("dump.vcd");
         $dumpvars(1, tb_reg_mem);
-        */
+        
         
         clk = 0;
         wen = 1;
        
         //Write 10-17 to addresses 0-7 
-        for(integer i=10;i<18;i=i+1) 
+      for(int i=10;i<18;i=i+1) //changed from integer to int for EDA
         begin
             data_in = i; 
             addr = (i+2);
@@ -33,7 +35,7 @@ module tb_reg_mem;
         wen =0;
         #1;
         //Read 10-17 from addresses 0-7 
-        for(integer i=10;i<18;i=i+1) 
+        for(int i=10;i<18;i=i+1) //changed from integer to int for EDA
         begin
             data_in = i; 
             addr = (i+2);
